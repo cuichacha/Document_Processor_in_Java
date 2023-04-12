@@ -44,6 +44,7 @@ public class Processor {
         if (apiKey.trim().length() == 0) {
             throw new RuntimeException("Invalid API Key!");
         }
+        scanner.nextLine();
         System.out.println("Please provide file path: ");
         if (filePath.trim().length() == 0) {
             throw new RuntimeException("Invalid file path!");
