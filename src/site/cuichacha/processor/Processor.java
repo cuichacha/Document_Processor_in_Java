@@ -45,11 +45,10 @@ public class Processor {
             throw new RuntimeException("Invalid API Key!");
         }
         System.out.println("Please provide file path: ");
-        scanner.nextLine();
+        filePath = scanner.nextLine();
         if (filePath.trim().length() == 0) {
             throw new RuntimeException("Invalid file path!");
         }
-        filePath = scanner.nextLine();
     }
 
     private static void processMarkdown() throws Exception {
