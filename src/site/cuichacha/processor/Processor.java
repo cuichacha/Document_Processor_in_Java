@@ -187,10 +187,11 @@ final class HttpRequester {
                 List.of("Now, you are a document translator",
                         "1. Translate this markdown to English with best quality and accuracy",
                         "2. Do not break any markdown format",
-                        "3. Ignore any markdown tags for translation, KEEP them where they are",
-                        "4. Ignore any punctuation marks，KEEP them where they are",
+                        "3. Ignore any markdown tags or html tags for translation, KEEP them where they are",
+                        "4. Ignore any punctuations，KEEP them where they are",
                         "5. Ignore these marks:" + chinesePunctuation + ", KEEP them where they are",
-                        "6. DO NOT keep original text",
+                        "6. Ignore any code blocks, KEEP them where they are",
+                        "7. DO NOT keep original text",
                         text));
         ChatGPTResponse chatGPTResponse = JsonConvertor.jsonToObject(result, ChatGPTResponse.class);
         return chatGPTResponse.getChoices().get(0).getMessage().getContent();
